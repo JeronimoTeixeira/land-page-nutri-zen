@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrizen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+
+            background: #fff;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background: #A5CF4E;
+            box-shadow: 10px 10px 10px hsl(0, 0%, 100%);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            
+        }
+
+        nav ul li {
+            margin: 0 30px;
+        }
+
+        nav ul li a {
+
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .home, .servicos, .contato {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* .home {
+            background: url('https://images.unsplash.com/photo-1514996937319-344454492b37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG51dHJpdGlvbnxlbnwwfHx8fDE2MzkwNzUzNDk&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
+            color: white;
+        } */
+
+        /* .home h2, .home p {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        } */
+
+        .servicos, .contato, .home {
+            background: #fff;
+        }
+
+        .servicos h2, .contato h2, .home h2 {
+            color: #4CAF50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .servicos ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .servicos ul li {
+            background: #f3f3f3;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            /* background: #25D366; */
+            /* border-radius: 50%; */
+            padding: 15px;
+            cursor: pointer;
+            /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
+        }
+
+        .whatsapp-button img {
+            width: 50px;
+            height: 50px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 2rem;
+                padding: 40px 0;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+
+            .servicos ul li, .contato p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="./img/logo.jpg" alt="Logo da Empresa" style="width: 200px; height: auto; vertical-align: middle; margin-right: 10px;">
+    
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showPage('home')">Sobre Nós</a></li>
+            <li><a href="#servicos" onclick="showPage('servicos')">Serviços</a></li>
+            <li><a href="#contato" onclick="showPage('contato')">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="home active">
+        <h2>Quem Somos</h2>
+        <p>Na Nutrizen, acreditamos que uma alimentação saudável é a chave para o bem-estar e a longevidade. Nossa equipe de especialistas está aqui para ajudar você a alcançar seus objetivos de saúde com planos alimentares personalizados.</p>
+    </section>
+
+    <section id="servicos" class="servicos">
+        <h2>Nossos Serviços</h2>
+        <p>Oferecemos uma variedade de serviços de consultoria nutricional adaptados às suas necessidades.</p>
+        <ul>
+            <li>Consultoria individual com planos personalizados</li>
+            <li>Programas de reeducação alimentar</li>
+            <li>Nutrição corporativa para empresas</li>
+            <li>Workshops e palestras sobre alimentação saudável</li>
+        </ul>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <p>Quer saber mais ou agendar uma consulta? Estamos à disposição para ajudar!</p>
+        <p>Entre em contato pelo nosso WhatsApp e transforme sua vida através da alimentação saudável.</p>
+    </section>
+
+    <footer>
+        <p>Nutrizen &copy; 2024. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/5585985123050" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('section').forEach((section) => {
+                section.classList.remove('active');
+            });
+            document.getElementById(page).classList.add('active');
+        }
+    </script>
+</body>
+</html>
