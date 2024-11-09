@@ -91,10 +91,14 @@
             background: #fff;
         }
 
-        .servicos h2, .contato h2, .home h2 {
+        .servicos h2, .contato h2, .home h2, .slide h2 {
             color: #4CAF50;
             font-size: 2rem;
             margin-bottom: 20px;
+        }
+
+        .servicos h4, .contato h4, .home h4, .slide h4 {
+            color: #4e6f4f;
         }
 
         .servicos ul {
@@ -166,6 +170,87 @@
                 font-size: 1rem;
             }
         }
+
+        .slides-section {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .slides-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            display: none;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image-item {
+            margin: 15px;
+            max-width: 300px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            max-width: 200px;
+            border-radius: 8px;
+        }
+
+        .image-item p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
     </style>
 </head>
 <body>
@@ -179,6 +264,7 @@
         <ul>
             <li><a href="#home" onclick="showPage('home')">Sobre Nós</a></li>
             <li><a href="#servicos" onclick="showPage('servicos')">Serviços</a></li>
+            <li><a href="#slide" onclick="showPage('slide')">Refeições</a></li>
             <li><a href="#contato" onclick="showPage('contato')">Contato</a></li>
         </ul>
     </nav>
@@ -205,6 +291,203 @@
         <p>Entre em contato pelo nosso WhatsApp e transforme sua vida através da alimentação saudável.</p>
     </section>
 
+    <section id="slide" class="slides-section">
+        <div class="slides-container">
+    
+            <!-- Slide 1 com 3 imagens -->
+            <div class="slide active">
+                <div class="image-container" style="flex-direction: column;">
+                    <h2>Marmitas</h2>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="image-item">
+                            <img src="./img/portifolio/frango-mexicana.jpg" alt="Descrição da Imagem 1">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Frango à mexicana com arroz e feijão</h4>
+                            <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Frango cortado em cubos, temperado com papicra, cominho e limão</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Carboidrato: Arroz integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Feijão preto, milho e pimentões coloridos</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de coentro fresco para enfeitar o sabors</p>
+                            </div>
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/wrap-integral-atum.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Wrap integral de atum</h4>
+                            <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div>
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/frango-curry-arroz-coco.jpg" alt="Descrição da Imagem 3">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Frango ao curry com arroz de coco</h4>
+                            <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Frango em cubos cozidos com curry, cebola e alho</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Carboidrato: Arroz integral cozido com um pouco de leite de coco</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Ervilhas e cenouras picadas no frango</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Coentro fresco picado para decorar</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Slide 2 com 2 imagens -->
+            <div class="slide">
+                <div class="image-container" style="flex-direction: column;">
+                    <h2>Marmitas</h2>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="image-item">
+                            <img src="./img/portifolio/omolete-salada-fresca.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Omelete colorida com salada fresca</h4>
+                            <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Omelete com espinafre, tomate e queijo branco</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Carboidrato: Pão integral ao lado</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Salada de rúcula e cenoura ralada</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um fio de azeite balsâmico na salada</p>
+                            </div>
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/batata-doce-carne-moida.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Wrap integral de atum</h4>
+                            <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Carne moída temperada com cebola, alho e temperos</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Carboidrato: Batata-doce assada em cubos</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Brócolis ou couve-flor cozidos no vapor</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de queijo ralado por cima</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Slide 3 com 4 imagens -->
+            <div class="slide">
+                <div class="image-container" style="flex-direction: column;">
+                    <h2>Snacks</h2>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="image-item">
+                            <img src="./img/portifolio/br-cereal-banana-canela.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Barra de cereal de banana e canela</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/br-cereal-chia-framboesa.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Barra de cereal de chia com framboesa</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/br-cereal-coco-amendoas.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Barra de cereal de coco e amêndoas</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                        
+                        <div class="image-item">
+                            <img src="./img/portifolio/br-cereal-nozes-chocolate.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Barra de cereal de nozes e chocolate</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Slide 4 com 3 imagens -->
+            <div class="slide">
+                <div class="image-container" style="flex-direction: column;">
+                    <h2>Smothies</h2>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="image-item">
+                            <img src="./img/portifolio/acai-com-ninho.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Açaí com ninho</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/manga-com-banana.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Manga com banana</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/frutas-vermelhas.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Frutas vermelhas</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Slide 5 com 2 imagens -->
+            <div class="slide">
+                <div class="image-container" style="flex-direction: column;">
+                    <h2>Smothies</h2>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <div class="image-item">
+                            <img src="./img/portifolio/banana-com-morango.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Banana com Morango Maracujá</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                        <div class="image-item">
+                            <img src="./img/portifolio/maracuja.jpg" alt="Descrição da Imagem 2">
+                            <h4 class="border-bottom: 0.5px solid #a8a8a8;">Maracujá</h4>
+                            <!-- <div style="display: flex; flex-direction: column;">
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Proteína: Atum em água (escorrido)</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Tortilla integral</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Vegetais: Alface, tomate e pepino em fatias</p>
+                                <p style="font-size: 13px; color: #707070; border-bottom: 0.5px solid #a8a8a8 ; overflow-wrap: break-word;">Extras: Um pouco de maionese leve ou molho de mostarda</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+    
+    
+
     <footer>
         <p>Nutrizen &copy; 2024. Todos os direitos reservados.</p>
     </footer>
@@ -223,6 +506,42 @@
             });
             document.getElementById(page).classList.add('active');
         }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                }
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            showSlide(currentSlide);
+        }
+
+        // function autoSlide() {
+        //     currentSlide = (currentSlide + 1) % slides.length;
+        //     showSlide(currentSlide);
+        // }
+
+        // setInterval(autoSlide, 5000);
+
+        // Mostra o primeiro slide ao carregar a página
+        document.addEventListener("DOMContentLoaded", () => {
+            showSlide(currentSlide);
+        });
+
+
     </script>
 </body>
 </html>
